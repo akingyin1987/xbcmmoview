@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+  <RelativeLayout android:id="@+id/live_new" android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <com.wingedcam.ipcam.IPCamVideoView android:id="@+id/VideoView1"
+        android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_camera_turn"
+        android:visibility="gone" android:layout_width="wrap_content"
+        android:layout_height="match_parent" android:layout_alignParentLeft="true">
+      <RelativeLayout android:visibility="gone" android:layout_width="wrap_content"
+          android:layout_height="wrap_content" android:layout_marginLeft="5dp">
+        <TextView android:textSize="20sp" android:textColor="#ffffff"
+            android:id="@+id/tv_camera_turn" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="20dp"
+            android:text="@string/camera_flip" android:layout_centerHorizontal="true"/>
+        <ImageView android:id="@+id/iv_videoview_rotation" android:layout_width="50dp"
+            android:layout_height="50dp" android:layout_marginTop="10dp"
+            android:src="@drawable/videoview_rotation" android:layout_below="@+id/tv_camera_turn"
+            android:layout_alignRight="@+id/tv_camera_turn" android:layout_centerHorizontal="true"/>
+      </RelativeLayout>
+      <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp" android:layout_marginTop="30dp">
+        <TextView android:textSize="20sp" android:textColor="#ffffff"
+            android:id="@+id/tv_resolution" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/resolution"/>
+        <Spinner android:id="@+id/spinner_resolution_select" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_below="@+id/tv_resolution"/>
+        <Button android:textSize="20sp" android:textColor="#000000" android:id="@+id/bt_more"
+            android:visibility="gone" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/more"
+            android:layout_below="@+id/spinner_resolution_select"/>
+      </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/button_ll"
+        android:layout_width="wrap_content" android:layout_height="match_parent"
+        android:layout_marginRight="15dp" android:layout_alignParentRight="true">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+          android:layout_weight="1">
+        <ImageView android:layout_gravity="center" android:id="@+id/pictures"
+            android:background="@drawable/live_photograph_press" android:layout_width="50dp"
+            android:layout_height="50dp"/>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+          android:layout_weight="1">
+        <ImageView android:layout_gravity="center" android:id="@+id/video"
+            android:background="@drawable/live_record_press" android:layout_width="50dp"
+            android:layout_height="50dp"/>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+          android:layout_weight="1">
+        <ImageView android:layout_gravity="center" android:id="@+id/photo"
+            android:background="@drawable/live_photo_press" android:layout_width="50dp"
+            android:layout_height="50dp"/>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+          android:layout_weight="1">
+        <ImageView android:layout_gravity="center" android:id="@+id/setting"
+            android:background="@drawable/live_set_press" android:layout_width="50dp"
+            android:layout_height="50dp"/>
+      </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/wheel_layout" android:visibility="gone"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_marginTop="55dp"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/more_ll"
+        android:layout_width="560dp" android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp" android:layout_marginTop="3dp"
+        android:layout_marginRight="18dp" android:layout_below="@+id/button_ll"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/more_setting"
+        android:background="@android:color/darker_gray" android:visibility="invisible"
+        android:layout_width="280dp" android:layout_height="150dp"
+        android:layout_centerInParent="true">
+      <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+          android:layout_height="match_parent" android:layout_weight="1">
+        <EditText android:id="@+id/input_ssid" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="1dp"
+            android:hint="@string/input_ssid" android:maxLength="20"
+            android:digits="_-0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:layout_weight="2" android:inputType="textCapCharacters"
+            android:imeOptions="actionDone"/>
+        <Button android:id="@+id/setting_ssid" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="1dp"
+            android:text="@string/set_wifi_ssid" android:layout_weight="3"/>
+      </LinearLayout>
+      <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+          android:layout_height="match_parent" android:layout_weight="1">
+        <EditText android:id="@+id/input_pwd" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="2dp"
+            android:hint="@string/input_password" android:maxLength="8"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:layout_weight="2" android:inputType="textPassword"
+            android:imeOptions="actionDone"/>
+        <Button android:id="@+id/setting_pwd" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="1dp"
+            android:text="@string/set_wifi_pwd" android:layout_weight="3"/>
+      </LinearLayout>
+      <LinearLayout android:orientation="horizontal" android:layout_width="match_parent"
+          android:layout_height="match_parent" android:layout_weight="1">
+        <Button android:id="@+id/reboot" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:text="@string/reboot"
+            android:layout_weight="1"/>
+        <Button android:id="@+id/clear_pwd" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:text="@string/reset_wifi_pwd"
+            android:layout_weight="1"/>
+      </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="16sp" android:textColor="#ff0000" android:gravity="center"
+        android:id="@+id/video_time" android:visibility="gone" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp" android:text="00:00"/>
+    <TextView android:textSize="16sp" android:textColor="#ff0000" android:gravity="center"
+        android:id="@+id/reslution_cap_label" android:visibility="gone"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" android:text="00:00" android:layout_centerHorizontal="true"/>
+    <ImageView android:id="@+id/animationIV" android:visibility="gone" android:layout_width="40dp"
+        android:layout_height="40dp" android:src="@drawable/load_animation"
+        android:layout_centerInParent="true"/>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/bg_ll"
+        android:visibility="gone"
+        android:background="@drawable/bg_new" android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+  </RelativeLayout>
+  <RelativeLayout android:id="@+id/welcome_view"
+      android:background="@drawable/welcome"
+      android:layout_width="match_parent"
+      android:visibility="gone"
+      android:layout_height="match_parent"/>
+</FrameLayout>
