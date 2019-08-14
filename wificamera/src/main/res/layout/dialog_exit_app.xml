@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/dialog_radius" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/dialog_radius" android:layout_width="300.0dip" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+        <TextView android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/exit_app" />
+        <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="10.0dip">
+        <Button android:gravity="center" android:id="@id/cancel" android:background="@drawable/button_cancel" android:clickable="true" android:layout_width="120.0dip" android:layout_height="40.0dip" android:text="@string/cancle" android:layout_alignParentLeft="true" />
+        <Button android:gravity="center" android:id="@id/sure" android:background="@drawable/button_sure" android:clickable="true" android:layout_width="120.0dip" android:layout_height="40.0dip" android:text="@string/sure" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

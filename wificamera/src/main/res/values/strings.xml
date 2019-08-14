@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="permission_group_tools_label">Vitamio tools</string>
+    <string name="permission_group_tools_description">Access Vitamio package and resources.</string>
+    <string name="permission_receive_messages_label">Receive Vitamio messages</string>
+    <string name="permission_receive_messages_description">Receive all broadcasts from Vitamio service.</string>
+    <string name="permission_write_providers_label">Write Vitamio providers</string>
+    <string name="permission_write_providers_description">Delete, update or create new items in Vitamio providers.
+    </string>
+    <string name="VideoView_error_title">Cannot play video</string>
+    <string name="VideoView_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming to
+        this device.
+    </string>
+    <string name="VideoView_error_text_unknown">Sorry, this video cannot be played.</string>
+    <string name="VideoView_error_button">OK</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+    <string name="record">Record</string>
+    <string name="rename">rename</string>
+    <string name="vitamio_videoview_error_button">OK</string>
+    <string name="vitamio_videoview_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming to this device.</string>
+    <string name="vitamio_videoview_error_text_unknown">Sorry, this video cannot be played.</string>
+    <string name="vitamio_videoview_error_title">Cannot play video</string>
+    <string name="empty" />
+    <string name="friday">Friday</string>
+    <string name="invalid_clip">Not retrieved video information</string>
+    <string name="load_fail">Load fail !</string>
+    <string name="loading">Loading …</string>
+    <string name="md_alarm">Motion detect alarm</string>
+    <string name="monday">Monday</string>
+    <string name="reboot">reboot</string>
+    <string name="record_failed">Failed to start recording !</string>
+    <string name="record_started">Start recording !</string>
+    <string name="record_stopped">Recording stopped !</string>
+    <string name="reload">Reload</string>
+    <string name="reset_wifi_pwd">reset pwd</string>
+    <string name="saturday">Saturday</string>
+    <string name="sd_alarm">Sound detection alarm</string>
+    <string name="set_wifi_pwd">set pwd</string>
+    <string name="set_wifi_ssid">set ssid</string>
+    <string name="sunday">Sunday</string>
+    <string name="thursday">Thursday</string>
+    <string name="today">Today</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="unknown_alarm">The unknown alarm</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="yesterday">Yesterday</string>
+
+    <string name="please_input_pwd">Please input pwd</string>
+    <string name="please_input_ssid">Please input ssid</string>
+    <string name="set_success">Success, please reboot</string>
+    <string name="set_password_8_length">password must 8 characters in length</string>
+    <string name="stop_record">Stop Recording</string>
+    <string name="rebooting">Rebootting, please wait...</string>
+    <string name="camera_flip">Camera Flip:</string>
+    <string name="resolution">Resolution:</string>
+    <string name="more">more</string>
+    <string name="input_ssid">Input ssid</string>
+    <string name="input_password">Input pwd</string>
+    <string name="input_pwd">Input password</string>
+    <string name="exit_app">Exit the application?</string>
+    <string name="cancle">Cancle</string>
+    <string name="sure">Sure</string>
+</resources>
