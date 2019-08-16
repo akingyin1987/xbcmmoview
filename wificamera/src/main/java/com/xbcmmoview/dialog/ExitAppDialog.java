@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import com.xbcmmoview.R;
-import com.xbcmmoview.application.WingedCamApplication;
+import com.xbcmmoview.application.WifiCamApplication;
 
 public class ExitAppDialog extends Dialog {
-    private WingedCamApplication app;
+    private WifiCamApplication app;
     private Button cancel;
     private LayoutInflater inflater = null;
     private Activity m_context;
@@ -30,7 +30,7 @@ public class ExitAppDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.app = (WingedCamApplication) getContext().getApplicationContext();
+        this.app = (WifiCamApplication) getContext().getApplicationContext();
         this.cancel = (Button) findViewById(R.id.cancel);
         this.sure = (Button) findViewById(R.id.sure);
         this.sure.setOnClickListener(new View.OnClickListener() {

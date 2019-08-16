@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.akingyin.wificamera.R;
-import com.xbcmmoview.application.WingedCamApplication;
+import com.xbcmmoview.application.WifiCamApplication;
 
 public class AccelerateRocker extends View {
     private int MAX = 255;
@@ -71,11 +71,11 @@ public class AccelerateRocker extends View {
         this.rocker_h = (float) (this.resizeBmp.getHeight() / 2);
         this.rocker_w = (float) (this.resizeBmp.getWidth() / 2);
         Log.e("TAG", "rocker_h:" + this.rocker_h + "--rocker_w:" + this.rocker_w);
-        this.R_MID = WingedCamApplication.getRotate_mid();
+        this.R_MID = WifiCamApplication.getRotate_mid();
     }
 
     private void channel_rate(float x, float y) {
-        this.R_MID = WingedCamApplication.getR_mid();
+        this.R_MID = WifiCamApplication.getR_mid();
         if (x <= getRange() || ((double) x) >= 0.5d) {
             if (((double) x) <= 0.5d || x >= 1.0f - getRange()) {
                 if (x >= 1.0f - getRange()) {

@@ -18,12 +18,10 @@ import android.os.Message;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.akingyin.wificamera.R;
 import com.sosocam.rcipcam3x.DISCOVERED_CAMERA_INFO;
 import com.sosocam.rcipcam3x.DiscoverListener;
 import com.sosocam.rcipcam3x.RCIPCam3X;
@@ -33,8 +31,7 @@ import com.wingedcam.storage.Storage;
 import com.wingedcam.util.HttpClient;
 import com.wingedcam.util.ThumbnailUtils;
 import com.wingedcam.util.Tools;
-import com.xbcmmoview.application.WingedCamApplication;
-import com.xbcmmoview.tools.AvcEncoder;
+import com.xbcmmoview.application.WifiCamApplication;
 import com.xbcmmoview.tools.SpUtil;
 
 import org.json.JSONException;
@@ -127,7 +124,7 @@ public class BaseWifiCameraActivity  extends FragmentActivity  implements IPCamV
             boolean exsit = is_camera_ap(news);
             Log.e("-----------exsit--->>> ", "ssid: " + news + "" + exsit + " cam.status():" + cam.status());
             if (exsit) {
-                WingedCamApplication.set_ssid(news);
+                WifiCamApplication.set_ssid(news);
                 if (cam != null && cam.status() == IPCam.CONN_STATUS.IDLE) {
                     Log.e("-----------exsit--->>> ", "StartDiscoverCameras: ");
                     RCIPCam3X.StartDiscoverCameras(this);
@@ -253,7 +250,7 @@ public class BaseWifiCameraActivity  extends FragmentActivity  implements IPCamV
 
     @Override
     public void on_camera_alarm_ioout(IPCam iPCam) {
-        WingedCamApplication.getSound(1);
+        WifiCamApplication.getSound(1);
         threadPool.execute(new Runnable() {
             @Override
             public void run() {
@@ -363,7 +360,7 @@ public class BaseWifiCameraActivity  extends FragmentActivity  implements IPCamV
 
     @Override
     public void on_result(IPCam iPCam, IPCam.ERROR error, JSONObject jSONObject) throws JSONException {
-        WingedCamApplication.resulotion_cap = jSONObject.getInt("resolution_capability");
+        WifiCamApplication.resulotion_cap = jSONObject.getInt("resolution_capability");
     }
 
     @Override
@@ -413,7 +410,7 @@ public class BaseWifiCameraActivity  extends FragmentActivity  implements IPCamV
                         return;
                     case 106:
                         if(activity.startSearchWifiTime>0 && System.currentTimeMillis() - activity.startSearchWifiTime>5000){
-                            Toast.makeText(activity,WingedCamApplication.get_ssid()+"无法连接到摄像头",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, WifiCamApplication.get_ssid()+"无法连接到摄像头",Toast.LENGTH_SHORT).show();
                             activity.showWifiDialog();
                         }
                         activity.startSearchWifiTime = 0;
@@ -434,7 +431,7 @@ public class BaseWifiCameraActivity  extends FragmentActivity  implements IPCamV
         if (cam.status() == IPCam.CONN_STATUS.CONNECTED) {
             String path="";
             Log.e("photo", "拍照----------------------: ");
-            WingedCamApplication.getSound(1);
+            WifiCamApplication.getSound(1);
             if (20 != cam.sensor_id) {
                 path = cam.snapshot();
             } else if (4 == this.currentResolution) {

@@ -1,7 +1,7 @@
 package com.xbcmmoview.tools;
 
 import com.wingedcam.ipcam.IPCam;
-import com.xbcmmoview.application.WingedCamApplication;
+import com.xbcmmoview.application.WifiCamApplication;
 
 public class DroneComm {
     OnGetDataListener exp_data = null;
@@ -29,7 +29,7 @@ public class DroneComm {
             System.arraycopy(data, 0, pkt, 1, data.length);
             pkt[data.length + 1] = (byte) (((byte) ((((data[0] ^ data[1]) ^ data[2]) ^ data[3]) ^ data[4])) & 255);
             pkt[data.length + 2] = (byte) -103;
-            WingedCamApplication.getByte(pkt);
+            WifiCamApplication.getByte(pkt);
             this.m_cam.write_comm(pkt);
         }
     }

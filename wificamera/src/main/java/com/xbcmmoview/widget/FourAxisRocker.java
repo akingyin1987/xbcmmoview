@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.akingyin.wificamera.R;
-import com.xbcmmoview.application.WingedCamApplication;
+import com.xbcmmoview.application.WifiCamApplication;
 
 public class FourAxisRocker extends View {
     private int F_MAX = 166;
@@ -71,10 +71,10 @@ public class FourAxisRocker extends View {
     }
 
     private void channel_rate(float x, float y) {
-        this.H_MID = WingedCamApplication.getH_mid();
-        this.V_MID = WingedCamApplication.getV_mid();
-        this.F_MIN = WingedCamApplication.getF_min();
-        this.F_MAX = WingedCamApplication.getF_max();
+        this.H_MID = WifiCamApplication.getH_mid();
+        this.V_MID = WifiCamApplication.getV_mid();
+        this.F_MIN = WifiCamApplication.getF_min();
+        this.F_MAX = WifiCamApplication.getF_max();
         Log.e("weitiao", "x:" + x + "  y:" + y);
         if (x > getRange() && ((double) x) < 0.5d) {
             this.channel_1 = (byte) ((int) (((double) this.H_MID) - ((((0.5d - ((double) x)) / 0.5d) * ((double) (this.H_MID - this.F_MIN))) * 1.2658228d)));
